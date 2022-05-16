@@ -82,11 +82,11 @@ export default class MeterWebPart extends BaseClientSideWebPart<IMeterWebPartPro
       pages: [
         {
           header: {
-            description: strings.PropertyPaneDescription
+            description: "Meter Settings"
           },
           groups: [
             {
-              groupName: strings.BasicGroupName,
+              groupName: "Header Settings",
               groupFields: [
                 PropertyPaneTextField('title', {
                   label: "Title"
@@ -94,6 +94,11 @@ export default class MeterWebPart extends BaseClientSideWebPart<IMeterWebPartPro
                 PropertyPaneTextField('description', {
                   label: strings.DescriptionFieldLabel
                 }),
+              ]
+            },
+            {
+              groupName: "Chart Settings",
+              groupFields: [
                 PropertyPaneTextField('percentage', {
                   label: "Percentage"
                 })

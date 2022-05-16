@@ -6,6 +6,7 @@ import {
   PropertyPaneTextField,
   PropertyPaneDropdown,
   PropertyPaneCheckbox,
+  PropertyPaneSlider
 } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import { IReadonlyTheme } from '@microsoft/sp-component-base';
@@ -107,9 +108,6 @@ export default class MeterWebPart extends BaseClientSideWebPart<IMeterWebPartPro
                     { key: "center", text: "Center"},
                     { key: "right", text: "Right"},
                   ]
-                }),
-                PropertyPaneCheckbox("showPercentageValue", {
-                  text: "Show Percentage"
                 })
               ]
             },
@@ -118,6 +116,9 @@ export default class MeterWebPart extends BaseClientSideWebPart<IMeterWebPartPro
               groupFields: [
                 PropertyPaneTextField('percentage', {
                   label: "Percentage"
+                }),
+                PropertyPaneCheckbox("showPercentageValue", {
+                  text: "Show Percentage"
                 })
               ]
             }

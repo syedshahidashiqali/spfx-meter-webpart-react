@@ -28,7 +28,7 @@ export default class Donut extends React.Component<IDonutProps> {
             cy="21"
             r="15.91549430918954"
             fill="transparent"
-            stroke="#47c3f0"
+            stroke={this.props.fillColor}
             strokeWidth="4"
             strokeDasharray={`${this.props.percentage} ${
               100 - this.props.percentage

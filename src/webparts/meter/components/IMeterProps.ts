@@ -4,6 +4,7 @@ export interface IMeterProps {
   percentage: number;
   headerAlignment: string;
   showPercentageValue: boolean;
+  fillColor: string;
   isDarkTheme: boolean;
   environmentMessage: string;
   hasTeamsContext: boolean;

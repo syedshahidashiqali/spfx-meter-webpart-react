@@ -5,6 +5,7 @@ import Donut from './Donut';
 import * as CSS from 'csstype'
 
 export default class Meter extends React.Component<IMeterProps, {}> {
+  
   public render(): React.ReactElement<IMeterProps> {
     return (
       <section className={styles.meter}>
@@ -15,6 +16,7 @@ export default class Meter extends React.Component<IMeterProps, {}> {
         <Donut
           percentage={this.props.percentage}
           showPercentageValue={this.props.showPercentageValue}
+          fillColor={this.props.fillColor}
         />
       </section>
     );

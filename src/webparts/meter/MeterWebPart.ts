@@ -9,6 +9,10 @@ import {
   PropertyPaneSlider,
   PropertyPaneLabel
 } from '@microsoft/sp-property-pane';
+import {
+  PropertyFieldColorPicker,
+  PropertyFieldColorPickerStyle
+} from '@pnp/spfx-property-controls/lib/PropertyFieldColorPicker';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import { IReadonlyTheme } from '@microsoft/sp-component-base';
 
@@ -22,6 +26,7 @@ export interface IMeterWebPartProps {
   percentage: number;
   headerAlignment: string;
   showPercentageValue: boolean;
+  fillColor: string;
 }
 
 export default class MeterWebPart extends BaseClientSideWebPart<IMeterWebPartProps> {
@@ -44,6 +49,7 @@ export default class MeterWebPart extends BaseClientSideWebPart<IMeterWebPartPro
         percentage: this.properties.percentage,
         headerAlignment: this.properties.headerAlignment,
         showPercentageValue: this.properties.showPercentageValue,
+        fillColor: this.properties.fillColor,
         isDarkTheme: this._isDarkTheme,
         environmentMessage: this._environmentMessage,
         hasTeamsContext: !!this.context.sdks.microsoftTeams,
@@ -128,6 +134,19 @@ export default class MeterWebPart extends BaseClientSideWebPart<IMeterWebPartPro
                 }),
                 PropertyPaneLabel(null, {
                   text: 'Enter a value between 0 and 100'
+                }),
+                PropertyFieldColorPicker('fillColor', {
+                  label: 'Fill Color',
+                  selectedColor: this.properties.fillColor,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
+                  properties: this.properties,
+                  disabled: false,
+                  debounce: 1000,
+                  isHidden: false,
+                  alphaSliderHidden: false,
+                  style: PropertyFieldColorPickerStyle.Full,
+                  iconName: 'Precipitation',
+                  key: 'colorFieldId'
                 })
               ]
             }

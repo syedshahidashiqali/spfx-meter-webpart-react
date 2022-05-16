@@ -141,10 +141,10 @@ export default class MeterWebPart extends BaseClientSideWebPart<IMeterWebPartPro
                   onPropertyChange: this.onPropertyPaneFieldChanged,
                   properties: this.properties,
                   disabled: false,
-                  debounce: 1000,
+                  debounce: 0, // delay after which control value will be set.
                   isHidden: false,
-                  alphaSliderHidden: false,
-                  style: PropertyFieldColorPickerStyle.Full,
+                  alphaSliderHidden: true,
+                  style: PropertyFieldColorPickerStyle.Inline,
                   iconName: 'Precipitation',
                   key: 'colorFieldId'
                 })

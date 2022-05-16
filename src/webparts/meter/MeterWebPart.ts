@@ -3,7 +3,8 @@ import * as ReactDom from 'react-dom';
 import { Version } from '@microsoft/sp-core-library';
 import {
   IPropertyPaneConfiguration,
-  PropertyPaneTextField
+  PropertyPaneTextField,
+  PropertyPaneDropdown,
 } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import { IReadonlyTheme } from '@microsoft/sp-component-base';
@@ -16,6 +17,7 @@ export interface IMeterWebPartProps {
   title: string;
   description: string;
   percentage: number;
+  headerAlignment: string;
 }
 
 export default class MeterWebPart extends BaseClientSideWebPart<IMeterWebPartProps> {
@@ -36,6 +38,7 @@ export default class MeterWebPart extends BaseClientSideWebPart<IMeterWebPartPro
         title: this.properties.title,
         description: this.properties.description,
         percentage: this.properties.percentage,
+        headerAlignment: this.properties.headerAlignment,
         isDarkTheme: this._isDarkTheme,
         environmentMessage: this._environmentMessage,
         hasTeamsContext: !!this.context.sdks.microsoftTeams,
@@ -94,6 +97,14 @@ export default class MeterWebPart extends BaseClientSideWebPart<IMeterWebPartPro
                 PropertyPaneTextField('description', {
                   label: strings.DescriptionFieldLabel
                 }),
+                PropertyPaneDropdown("headerAlignment", {
+                  label: "Header Alignment",
+                  options: [
+                    { key: "left", text: "Left"},
+                    { key: "center", text: "Center"},
+                    { key: "right", text: "Right"},
+                  ]
+                })
               ]
             },
             {

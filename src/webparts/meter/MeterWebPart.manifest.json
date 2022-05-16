@@ -24,7 +24,8 @@
     "properties": {
       "title": "",
       "description": "Meter",
-      "percentage": 0
+      "percentage": 0,
+      "headerAlignment": "center"
     }
   }]
 }

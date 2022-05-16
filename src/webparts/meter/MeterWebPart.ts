@@ -5,6 +5,7 @@ import {
   IPropertyPaneConfiguration,
   PropertyPaneTextField,
   PropertyPaneDropdown,
+  PropertyPaneCheckbox,
 } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import { IReadonlyTheme } from '@microsoft/sp-component-base';
@@ -18,6 +19,7 @@ export interface IMeterWebPartProps {
   description: string;
   percentage: number;
   headerAlignment: string;
+  showPercentageValue: boolean;
 }
 
 export default class MeterWebPart extends BaseClientSideWebPart<IMeterWebPartProps> {
@@ -39,6 +41,7 @@ export default class MeterWebPart extends BaseClientSideWebPart<IMeterWebPartPro
         description: this.properties.description,
         percentage: this.properties.percentage,
         headerAlignment: this.properties.headerAlignment,
+        showPercentageValue: this.properties.showPercentageValue,
         isDarkTheme: this._isDarkTheme,
         environmentMessage: this._environmentMessage,
         hasTeamsContext: !!this.context.sdks.microsoftTeams,
@@ -104,6 +107,9 @@ export default class MeterWebPart extends BaseClientSideWebPart<IMeterWebPartPro
                     { key: "center", text: "Center"},
                     { key: "right", text: "Right"},
                   ]
+                }),
+                PropertyPaneCheckbox("showPercentageValue", {
+                  text: "Show Percentage"
                 })
               ]
             },

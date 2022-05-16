@@ -35,9 +35,11 @@ export default class Donut extends React.Component<IDonutProps> {
             }`}
             strokeDashoffset="25"
           />
-          <text className="donut-number" x="50%" y="50%" textAnchor="middle">
-            {this.props.percentage}%
-          </text>
+          {this.props.showPercentageValue && (
+            <text className="donut-number" x="50%" y="50%" textAnchor="middle">
+              {this.props.percentage}%
+            </text>
+          )}
         </svg>
       </div>
     );

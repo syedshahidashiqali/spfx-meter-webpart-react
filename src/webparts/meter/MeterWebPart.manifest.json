@@ -25,7 +25,8 @@
       "title": "",
       "description": "Meter",
       "percentage": 0,
-      "headerAlignment": "center"
+      "headerAlignment": "center",
+      "showPercentageValue": true
     }
   }]
 }

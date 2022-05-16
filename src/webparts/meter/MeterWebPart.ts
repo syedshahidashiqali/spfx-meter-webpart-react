@@ -119,6 +119,11 @@ export default class MeterWebPart extends BaseClientSideWebPart<IMeterWebPartPro
                 }),
                 PropertyPaneCheckbox("showPercentageValue", {
                   text: "Show Percentage"
+                }),
+                PropertyPaneSlider("percentage", {
+                  min: 0,
+                  max: 100,
+                  step:1,
                 })
               ]
             }

@@ -6,7 +6,8 @@ import {
   PropertyPaneTextField,
   PropertyPaneDropdown,
   PropertyPaneCheckbox,
-  PropertyPaneSlider
+  PropertyPaneSlider,
+  PropertyPaneLabel
 } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import { IReadonlyTheme } from '@microsoft/sp-component-base';
@@ -124,6 +125,9 @@ export default class MeterWebPart extends BaseClientSideWebPart<IMeterWebPartPro
                   min: 0,
                   max: 100,
                   step:1,
+                }),
+                PropertyPaneLabel(null, {
+                  text: 'Enter a value between 0 and 100'
                 })
               ]
             }

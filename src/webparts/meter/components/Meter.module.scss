@@ -1,34 +1,21 @@
-@import '~office-ui-fabric-react/dist/sass/References.scss';
-
 .meter {
-  overflow: hidden;
-  padding: 1em;
-  color: "[theme:bodyText, default: #323130]";
-  color: var(--bodyText);
-  &.teams {
-    font-family: $ms-font-family-fallbacks;
+  h1 {
+    text-align: center;
+    font-weight: 200;
+    font-size: 2.5em;
   }
-}
 
-.welcome {
-  text-align: center;
-}
+  p {
+    text-align: center;
+  }
 
-.welcomeImage {
-  width: 100%;
-  max-width: 420px;
-}
+  text {
+    font-size: 0.7em;
+    font-weight: 200;
+    transform: translateY(0.3em);
+  }
 
-.links {
-  a {
-    text-decoration: none;
-    color: "[theme:link, default:#03787c]";
-    color: var(--link); // note: CSS Custom Properties support is limited to modern browsers only
-
-    &:hover {
-      text-decoration: underline;
-      color: "[theme:linkHovered, default: #014446]";
-      color: var(--linkHovered); // note: CSS Custom Properties support is limited to modern browsers only
-    }
+  circle {
+    transition: stroke-dasharray 0.8s ease;
   }
 }
